@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    background-color: #0B2434;
+    padding: 20px;
+    font-family: 'Karla', sans-serif;
+}
+
+main {
+    background-color: #F5F5F5;
+    min-height: 400px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title {
+    font-size: 40px;
+    margin: 0;
+}
+
+.instructions {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin-top: 0;
+    text-align: center;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    row-gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info p {
+    margin: 0;
+}
+
+.dice-container {
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    align-items: center;
+    gap: 20px;
+    justify-items: center;
+    margin-bottom: 40px;
+}
+
+.die-face {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.die-dot--center {
+    position: absolute;
+}
+
+.die-dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+
+.dots-1 .die-dot.die-dot--center {
+    background-color: black;
+}
+
+.dots-2 .die-dot:first-child,
+.dots-2 .die-dot:nth-child(6) {
+    background-color: black;
+}
+
+.dots-3 .die-dot:nth-child(2),
+.dots-3 .die-dot:nth-child(5),
+.dots-3 .die-dot.die-dot--center {
+    background-color: black;
+}
+
+.dots-4 .die-dot:first-child,
+.dots-4 .die-dot:nth-child(2),
+.dots-4 .die-dot:nth-child(5),
+.dots-4 .die-dot:nth-child(6) {
+    background-color: black;
+}
+
+.dots-5 .die-dot:first-child,
+.dots-5 .die-dot:nth-child(2),
+.dots-5 .die-dot:nth-child(5),
+.dots-5 .die-dot:nth-child(6),
+.dots-5 .die-dot.die-dot--center {
+    background-color: black;
+}
+
+.dots-6 .die-dot:first-child,
+.dots-6 .die-dot:nth-child(2),
+.dots-6 .die-dot:nth-child(3),
+.dots-6 .die-dot:nth-child(4),
+.dots-6 .die-dot:nth-child(5),
+.dots-6 .die-dot:nth-child(6) {
+    background-color: black;
+}
+
+.roll-dice {
+    height: 50px;
+    width: 150px;
+    border: none;
+    border-radius: 6px;
+    background-color: #5035FF;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.roll-dice:focus {
+    outline: none;
+}
+
+.roll-dice:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.stopwatch-time {
+    display: inline-block;
+    min-width: 117px;
+}
+
+.rolls-quantity {
+    display: inline-block;
+    min-width: 66px;
+}
+
+.best-time {
+    white-space: nowrap;
+}
+
+@media (max-width: 450px) {
+    .info {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .dice-container {
+        grid-template: auto auto / repeat(2, 1fr);
+    }
+}
